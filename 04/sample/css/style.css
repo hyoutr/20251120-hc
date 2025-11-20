@@ -1,0 +1,132 @@
+@import "https://unpkg.com/ress/dist/ress.min.css";
+
+/* ブラウザデフォルトのスタイルをリセット */
+    {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    line-height: 1;
+    counter-reset:num 0;
+    position:relative;
+}
+
+body::before{
+    content:"";
+    position: absolute;
+    z-index:-1;
+    width: 70%;
+    height: 100%;
+    background: #d1eff1;
+}
+main {
+    padding: 100px 0;
+}
+
+section {
+    width: 1000px;
+    margin: auto;
+    position: relative;
+    display: flex;
+    padding-left: 120px;
+}
+
+section + section {
+    margin-top: 80px;
+}
+
+h2 {
+    position:absolute;
+    top:0;
+    left:0;
+    color: #3AAEB2;
+    padding-top: 56px;
+
+}
+
+h2::before {
+    font-family: serif;
+    position:absolute;
+    top:0;
+    font-size: 48px;
+
+    counter-increment:  num 1;
+    content: counter(num, decimal-leading-zero);
+}
+
+h2 span {
+    writing-mode: vertical-lr;
+    padding-left: .5em;
+    transform: rotate(180deg);
+    border-left:2px solid #3aaeb2;
+    letter-spacing: .1em;
+}
+
+h2 span.jp {
+    transform: rotate(180deg);  /* 文字を上下反転 */
+    text-orientation: sideways-right;  /* 横向き文字を右に倒す */
+    border-left: 2px solid #3AAEB2;  /* 左線を統一 */
+  }
+  
+  /* 05. 画像設定 */
+  section img {
+    width: 400px;  /* 画像の横幅を400pxに固定 */
+  }
+  
+  /* 06. テキストブロック配置 */
+  .text {
+    width: 48%;  /* 親要素に対して約半分の幅 */
+    margin-left: auto;  /* 自動で右寄せ配置 */
+  }
+  
+  /* 07. 商品コピー（強調文） */
+  .item-copy {
+    color: white;  /* テキストを白色に設定 */
+    font-size: 1.5em;  /* 通常の1.5倍サイズ */
+    margin-bottom: 1em;  /* 下に余白を設定 */
+    line-height: 1.8;  /* 行間を広く取り読みやすく */
+  }
+  
+  /* 08. 商品コピー内の背景設定 */
+  .item-copy span {
+    background: #3AAEB2;  /* 背景色を見出しと揃える */
+    padding: 4px;  /* テキスト周囲に内側余白 */
+  }
+  
+  /* 09. 説明文の行間設定 */
+  .desc {
+    line-height: 1.6;  /* 適度な行間で読みやすさを確保 */
+  }
+  
+  /* 01. フッター全体の背景・文字・余白設定 */
+footer {
+    background: #3AAEB2;  /* 背景色を設定 */
+    color: white;         /* テキストを白に */
+    padding: 80px 0;      /* 上下に80pxの余白を確保 */
+    text-align: center;   /* テキストを中央揃え */
+  }
+  
+  /* 02. フッター段落の幅と行間設定 */
+  footer p {
+    width: 600px;         /* 段落幅を600pxに固定 */
+    margin: auto;         /* ページ中央に配置 */
+    line-height: 1.6;     /* 行間を広めに設定 */
+  }
+  
+  /* 03. キャッチコピーのフォントサイズと余白 */
+  footer .foot-copy {
+    font-size: 2em;       /* フォントサイズを2倍に設定 */
+    margin-bottom: 1em;   /* 下に余白を設定 */
+  }
+  
+  /* 04. フッターロゴの表示・配置 */
+  footer .logo {
+    display: block;       /* ブロック表示で縦方向に整列 */
+    margin: 40px auto;    /* 上下に40px余白、中央寄せ */
+  }
+  
+  /* 05. コピーライト文字のサイズ調整（small） */
+  footer .copyright {
+    font-size: 0.8em;     /* 全体より少し小さく表示 */
+  }
